@@ -23,5 +23,5 @@ mkdir -p $(dirname $PROFILE_PATH)
 echo 'export PATH="/app/vendor/ffmpeg/bin:$PATH"' >> $PROFILE_PATH
 echo 'export LD_LIBRARY_PATH="/app/vendor/ffmpeg/lib:$LD_LIBRARY_PATH"' >> $PROFILE_PATH
 
-find /
-export PKG_CONFIG_PATH=/app/vendor/ffmpeg/lib/pkgconfig
+find $BUILD_DIR/vendor
+export PKG_CONFIG_PATH=$BUILD_DIR/vendor/ffmpeg/lib/pkgconfig
