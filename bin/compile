@@ -24,8 +24,10 @@ echo 'export PATH="/app/vendor/ffmpeg/bin:$PATH"' >> $PROFILE_PATH
 echo 'export LD_LIBRARY_PATH="/app/vendor/ffmpeg/lib:$LD_LIBRARY_PATH"' >> $PROFILE_PATH
 
 if [ ! -f $3/PKG_CONFIG_PATH ]; then
+  echo "Setting PKG_CONFIG_PATH fresh." | indent
   echo "\$PKG_CONFIG_PATH:$BUILD_DIR/vendor/ffmpeg/lib/pkgconfig" > $3/PKG_CONFIG_PATH
 else
+    echo "Appending PKG_CONFIG_PATH to the end." | indent
   echo ":$BUILD_DIR/vendor/ffmpeg/lib/pkgconfig" >> $3/PKG_CONFIG_PATH
 fi
 
